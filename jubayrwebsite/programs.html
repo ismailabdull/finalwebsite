@@ -139,6 +139,250 @@
             padding: 60px 20px;
         }
 
+        /* Core Subjects Section */
+        .core-subjects {
+            padding: 80px 0;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .core-subjects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00b1e6, #0693e3, #00b1e6);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subjects-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .subjects-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .subjects-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .subject-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: var(--card-color-1);
+        }
+
+        /* Unique colors for each subject */
+        .math-card {
+            --card-color-1: #4CAF50;
+            --card-color-2: #8BC34A;
+        }
+
+        .science-card {
+            --card-color-1: #2196F3;
+            --card-color-2: #03A9F4;
+        }
+
+        .arabic-card {
+            --card-color-1: #9C27B0;
+            --card-color-2: #E91E63;
+        }
+
+        .somali-card {
+            --card-color-1: #FF9800;
+            --card-color-2: #FFC107;
+        }
+
+        .subject-icon-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+        }
+
+        .subject-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .subject-card:hover .subject-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .icon-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: -10px;
+            left: -10px;
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            opacity: 0.1;
+            border-radius: 25px;
+            transform: rotate(-10deg);
+            transition: all 0.3s ease;
+        }
+
+        .subject-card:hover .icon-decoration {
+            transform: rotate(15deg) scale(1.2);
+            opacity: 0.2;
+        }
+
+        .subject-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .subject-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 25px;
+            min-height: 60px;
+        }
+
+        .subject-highlights {
+            margin-bottom: 25px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .highlight-item i {
+            color: var(--card-color-1);
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .subject-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .topic-tag {
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .subject-card:hover .topic-tag {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .subjects-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 0 20px;
+        }
+
+        .subjects-cta p {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b1e6, #0693e3);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,177,230,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,177,230,0.4);
+        }
+
         /* Programs Overview */
         .programs-overview {
             text-align: center;
@@ -532,6 +776,46 @@
                 font-size: 16px;
             }
 
+            /* Subject Cards Responsive */
+            .core-subjects {
+                padding: 60px 0;
+                margin-bottom: 40px;
+            }
+
+            .subjects-title {
+                font-size: 32px;
+            }
+
+            .subjects-subtitle {
+                font-size: 18px;
+            }
+
+            .subjects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+            }
+
+            .subject-card {
+                padding: 30px 25px;
+            }
+
+            .subject-name {
+                font-size: 22px;
+            }
+
+            .subject-description {
+                font-size: 15px;
+            }
+
+            .subjects-cta p {
+                font-size: 20px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
             .programs-overview h3 {
                 font-size: 28px;
             }
@@ -574,6 +858,83 @@
 
             .main-content {
                 padding: 40px 15px;
+            }
+
+            /* Subject Cards Mobile */
+            .core-subjects {
+                padding: 50px 0;
+                margin-bottom: 30px;
+            }
+
+            .subjects-title {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .subjects-subtitle {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .subject-card {
+                padding: 25px 20px;
+            }
+
+            .subject-icon-wrapper {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 20px;
+            }
+
+            .subject-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 30px;
+            }
+
+            .subject-name {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .subject-description {
+                font-size: 14px;
+                margin-bottom: 20px;
+                min-height: auto;
+            }
+
+            .highlight-item {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .highlight-item i {
+                font-size: 14px;
+            }
+
+            .topic-tag {
+                font-size: 11px;
+                padding: 5px 12px;
+            }
+
+            .subjects-cta {
+                margin-top: 40px;
+            }
+
+            .subjects-cta p {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 15px;
             }
 
             .programs-overview {
@@ -633,6 +994,149 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Core Subjects Section -->
+        <section class="core-subjects">
+            <div class="subjects-header">
+                <h2 class="subjects-title">Our Core Subject Areas</h2>
+                <p class="subjects-subtitle">Excellence in foundational education and cultural learning</p>
+            </div>
+            
+            <div class="subjects-grid">
+                <!-- Math Subject -->
+                <div class="subject-card math-card">
+                    <div class="subject-icon-wrapper">
+                        <div class="subject-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="icon-decoration"></div>
+                    </div>
+                    <h3 class="subject-name">Mathematics</h3>
+                    <p class="subject-description">Build strong numerical foundations through engaging problem-solving, critical thinking, and real-world applications</p>
+                    <div class="subject-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>K-12 Curriculum</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced Problem Solving</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Test Preparation</span>
+                        </div>
+                    </div>
+                    <div class="subject-topics">
+                        <span class="topic-tag">Algebra</span>
+                        <span class="topic-tag">Geometry</span>
+                        <span class="topic-tag">Calculus</span>
+                        <span class="topic-tag">Statistics</span>
+                    </div>
+                </div>
+
+                <!-- Science Subject -->
+                <div class="subject-card science-card">
+                    <div class="subject-icon-wrapper">
+                        <div class="subject-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="icon-decoration"></div>
+                    </div>
+                    <h3 class="subject-name">Science</h3>
+                    <p class="subject-description">Explore the wonders of the natural world through hands-on experiments, scientific inquiry, and discovery learning</p>
+                    <div class="subject-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Lab Experiments</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>STEM Integration</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Research Skills</span>
+                        </div>
+                    </div>
+                    <div class="subject-topics">
+                        <span class="topic-tag">Biology</span>
+                        <span class="topic-tag">Chemistry</span>
+                        <span class="topic-tag">Physics</span>
+                        <span class="topic-tag">Earth Science</span>
+                    </div>
+                </div>
+
+                <!-- Arabic Subject -->
+                <div class="subject-card arabic-card">
+                    <div class="subject-icon-wrapper">
+                        <div class="subject-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="icon-decoration"></div>
+                    </div>
+                    <h3 class="subject-name">Arabic Language</h3>
+                    <p class="subject-description">Master the beauty of Arabic through comprehensive language instruction covering reading, writing, and conversation</p>
+                    <div class="subject-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Native Speakers</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cultural Context</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>All Proficiency Levels</span>
+                        </div>
+                    </div>
+                    <div class="subject-topics">
+                        <span class="topic-tag">Reading</span>
+                        <span class="topic-tag">Writing</span>
+                        <span class="topic-tag">Grammar</span>
+                        <span class="topic-tag">Conversation</span>
+                    </div>
+                </div>
+
+                <!-- Somali Subject -->
+                <div class="subject-card somali-card">
+                    <div class="subject-icon-wrapper">
+                        <div class="subject-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <div class="icon-decoration"></div>
+                    </div>
+                    <h3 class="subject-name">Somali Language</h3>
+                    <p class="subject-description">Connect with heritage through authentic Somali language education, preserving culture while building fluency</p>
+                    <div class="subject-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Heritage Learning</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cultural Stories</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Community Connection</span>
+                        </div>
+                    </div>
+                    <div class="subject-topics">
+                        <span class="topic-tag">Speaking</span>
+                        <span class="topic-tag">Reading</span>
+                        <span class="topic-tag">Writing</span>
+                        <span class="topic-tag">Culture</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subjects-cta">
+                <p>Ready to excel in these subjects?</p>
+                <a href="#contact" class="cta-button">Enroll Today</a>
+            </div>
+        </section>
+
         <!-- Programs Overview -->
         <section class="programs-overview">
             <h3>Comprehensive Learning Solutions</h3>
